@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Greeting Card</title>
+    <link rel="stylesheet" href="./styles.css">
+    <base target="_blank">
+</head>
+<body>
+    <!-- Background Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="moon">🌙</div>
+        <h1>Virtual Qurbani Greeting Card</h1>
+        <p class="subtitle">কুরবানি ঈদের শুভেচ্ছা কার্ড তৈরি করুন</p>
+    </header>
+
+    <div class="container">
+        <!-- Step 1: Choose Animal -->
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">১</span>
+                পশু নির্বাচন করুন
+            </div>
+            <div class="animal-grid">
+                <div class="animal-card" data-animal="cow" onclick="selectAnimal(this)">
+                    <span class="animal-icon">🐄</span>
+                    <div class="animal-name">Cow</div>
+                    <div class="animal-name-bn">গরু</div>
+                </div>
+                <div class="animal-card" data-animal="goat" onclick="selectAnimal(this)">
+                    <span class="animal-icon">🐐</span>
+                    <div class="animal-name">Goat</div>
+                    <div class="animal-name-bn">ছাগল</div>
+                </div>
+                <div class="animal-card" data-animal="camel" onclick="selectAnimal(this)">
+                    <span class="animal-icon">🐪</span>
+                    <div class="animal-name">Camel</div>
+                    <div class="animal-name-bn">উট</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Choose Style -->
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">২</span>
+                শুভেচ্ছার ধরন নির্বাচন করুন
+            </div>
+            <div class="style-grid">
+                <div class="style-card" data-style="funny" onclick="selectStyle(this)">
+                    <span class="style-icon">😄</span>
+                    <div class="style-name">Funny</div>
+                    <div class="style-desc">মজার শুভেচ্ছা</div>
+                </div>
+                <div class="style-card" data-style="emotional" onclick="selectStyle(this)">
+                    <span class="style-icon">💝</span>
+                    <div class="style-name">Emotional</div>
+                    <div class="style-desc">আবেগঘন শুভেচ্ছা</div>
+                </div>
+                <div class="style-card" data-style="islamic" onclick="selectStyle(this)">
+                    <span class="style-icon">🕌</span>
+                    <div class="style-name">Islamic</div>
+                    <div class="style-desc">ইসলামিক শুভেচ্ছা</div>
+                </div>
+                <div class="style-card" data-style="aesthetic" onclick="selectStyle(this)">
+                    <span class="style-icon">✨</span>
+                    <div class="style-name">Aesthetic</div>
+                    <div class="style-desc">সুন্দর শুভেচ্ছা</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generate Button -->
+        <button class="generate-btn" id="generateBtn" onclick="generateCard()" disabled>
+            ✨ কার্ড তৈরি করুন
+        </button>
+
+        <!-- Loading -->
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>আপনার শুভেচ্ছা কার্ড তৈরি হচ্ছে...</p>
+        </div>
+
+        <!-- Card Preview -->
+        <div class="card-preview-section" id="cardPreview">
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">৩</span>
+                    আপনার শুভেচ্ছা কার্ড
+                </div>
+                <div class="card-container" id="cardContainer">
+                    <div class="card-corner tl"></div>
+                    <div class="card-corner tr"></div>
+                    <div class="card-corner bl"></div>
+                    <div class="card-corner br"></div>
+                    <div class="card-border">
+                        <div class="card-decoration">✦ ✦ ✦</div>
+                        <div class="card-animal-emoji" id="cardAnimal">🐄</div>
+                        <div class="card-divider"></div>
+                        <div class="card-greeting" id="cardGreeting">
+                            এই কুরবানির ঈদে ত্যাগের শিক্ষায় ভরে উঠুক তোমার জীবন 🤍
+                        </div>
+                        <div class="card-divider"></div>
+                        <div class="card-decoration">✦ ✦ ✦</div>
+                        <div class="card-footer">
+                            ঈদ মোবারক 🌙<br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn download-btn" onclick="downloadCard()">
+                        📥 ডাউনলোড করুন
+                    </button>
+                    <button class="action-btn share-btn" onclick="shareCard()">
+                        📤 শেয়ার করুন
+                    </button>
+                    <button class="action-btn new-btn" onclick="resetCard()">
+                        🔄 নতুন কার্ড
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>🌙 Virtual Qurbani Greeting Card | কুরবানি ঈদ মোবারক 🌙</p>
+        <p style="margin-top:8px; font-size:0.8rem;">ত্যাগের মহিমায় ভরে উঠুক প্রতিটি হৃদয়</p>
+    </footer>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
